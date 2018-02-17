@@ -1,6 +1,6 @@
 # Lesson 2.2: Staring small
 
-* Materials about[units & measurements, including device-independent pixels](https://material.io/guidelines/layout/units-measurements.html).
+* Materials about [units & measurements, including device-independent pixels](https://material.io/guidelines/layout/units-measurements.html).
 
 * The viewport and the device pixel ratio are both likely causes for the differences between devices.
 
