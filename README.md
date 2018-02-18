@@ -19,7 +19,8 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 
 ### Videos
 
-### Useful commands
+### Notes from lessons
 
 * [Lesson 2.1: Why Responsive?](lesson-2-1.md)
 * [Lesson 2.2: Staring small](lesson-2-2.md)
+* [Lesson 2.3: Building up](lesson-2-3.md)
