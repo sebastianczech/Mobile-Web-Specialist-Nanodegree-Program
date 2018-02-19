@@ -25,3 +25,4 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 * [Lesson 2.2 - Staring small](lesson-2-2.md)
 * [Lesson 2.3 - Building up](lesson-2-3.md)
 * [Lesson 2.4 - Common responsive patterns](lesson-2-4.md)
+* [Lesson 2.5 - Optimizations](lesson-2-5.md)
