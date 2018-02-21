@@ -26,3 +26,4 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 * [Lesson 2.3 - Building up](lesson-2-3.md)
 * [Lesson 2.4 - Common responsive patterns](lesson-2-4.md)
 * [Lesson 2.5 - Optimizations](lesson-2-5.md)
+* [Lesson 2.6 - 2.7 - Getting up and running, Units, Formats and Environments](lesson-2-6-7.md)
