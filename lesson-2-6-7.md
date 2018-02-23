@@ -31,3 +31,4 @@
    * [Image optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
    * [A new image format for the Web](https://developers.google.com/speed/webp/?csw=1)
    * [WebP image format](https://caniuse.com/#feat=webp)
+   * [Realizing common layouts using CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout)
