@@ -32,6 +32,16 @@
 
 * if `sizes` is missing, the browser defaults sizes to 100vw, meaning that it expects the image will display at the full viewport width.
 
+* `picture` example:
+
+```html
+<picture>
+  <source media="(min-width: 512px)" srcset="images/example.jpg">
+  <source media="(min-width: 1024px)" srcset="images/example.jpg">
+  <img src="images/example.jpg" alt="Example title">
+</picture>
+```
+
 * `alt` attributes should be descriptive for important images, like this body surfer. Because body surfing is important, I guess.
 
 * `alt` attributes should be empty for images that are just decorations, like this boiler image.
