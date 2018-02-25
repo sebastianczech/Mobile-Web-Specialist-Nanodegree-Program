@@ -30,3 +30,4 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 * [Lesson 2.8 - Images with Markup](lesson-2-8.md)
 * [Lesson 2.9 - Full Responsiveness](lesson-2-9.md)
 * [Lesson 2.10 - Accessibility overview](lesson-2-10.md)
+* [Lesson 2.11 - Focus](lesson-2-11.md)
