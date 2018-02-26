@@ -1,4 +1,4 @@
-# Lesson 2.12 - Semantics basics
+# Lesson 2.12 - Semantics basics, navigating content
 
 * Concept Role - Label - Value - State
 
@@ -20,3 +20,6 @@
    * [label element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
    * [Adaptable: Create content that can be presented in different ways (for example simpler layout) without losing information or structure](https://webaim.org/standards/wcag/checklist#sc1.3.2)
    * [Alternative Text](https://webaim.org/techniques/alttext/)
+
+
+* Good navigation - meaningful headings (h1 - h6), appropriate page structure (header, nav, main, article, aside, footer) and links with names, which can be understood
