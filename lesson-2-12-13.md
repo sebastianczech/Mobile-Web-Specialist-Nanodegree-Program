@@ -1,4 +1,4 @@
-# Lesson 2.12 - Semantics basics, navigating content
+# Lesson 2.12 - 2.13 - Semantics basics, navigating content
 
 * Concept Role - Label - Value - State
 
