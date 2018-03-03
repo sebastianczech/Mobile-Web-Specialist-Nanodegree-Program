@@ -1,7 +1,6 @@
 # Lesson 2.11 - Focus
 
-* Mo
-* [](https://developers.google.com/web/updates/2016/03/focus-start-point?hl=en)ve focus around the page using your keyboard:
+* Move focus around the page using your keyboard:
    * **TAB** will move focus forward
    * **SHIFT** - TAB will move focus backwards
    * **Arrow keys** can be used to navigate inside of a component
