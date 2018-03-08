@@ -32,6 +32,7 @@
    * [Same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
    * [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
    * [New Tricks in XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/)
+   * [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/)
 
 
 ### Using AJAX with XHR
@@ -68,7 +69,7 @@ asyncRequestObject.setRequestHeader('Authorization', 'Client-ID ***');
 asyncRequestObject.send();
 ```
 
-### Recap
+#### Recap
 
 * To Send An Async Request
    1. create an XHR object with the XMLHttpRequest constructor function
@@ -80,3 +81,43 @@ asyncRequestObject.send();
 
 * To Use The Response
    1. use the ``.responseText`` property - holds the text of the async request's response   
+
+
+### Using AJAX with jQuery
+
+#### ``ajax`` method
+```JavaScript
+$.ajax(<url-to-fetch>, <a-configuration-object>);
+
+// or
+
+$.ajax(<just a configuration object>);
+```
+
+#### Handling response
+
+```JavaScript
+function handleResponse(data) {
+    console.log('the ajax request has finished!');
+    console.log(data);
+}
+
+$.ajax({
+    url: `https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`
+}).done(handleResponse);;
+```
+
+#### Request with Authorization Header
+
+```
+$.ajax({
+    url: 'https://api.unsplash.com/search/photos',
+    headers: { Authorization: 'Client-ID 123acd456efg' }
+}).done(handleResponse);;
+```
+
+#### Recap
+
+  1. We do not need to create an XHR object.
+  1. Instead of specifying that the request is a GET request, it defaults to that and we just provide the URL of the resource we're requesting.
+  1. Instead of setting onload, we use the .done() method.
