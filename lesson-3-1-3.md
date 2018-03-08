@@ -121,3 +121,14 @@ $.ajax({
   1. We do not need to create an XHR object.
   1. Instead of specifying that the request is a GET request, it defaults to that and we just provide the URL of the resource we're requesting.
   1. Instead of setting onload, we use the .done() method.
+  1. Parameter is being converted from JSON to a JavaScript object, so JSON.parse() is no longer needed.
+  1. jQuery's ajax method does a lot of things under the hood:
+      1. creates a new XHR object each time it's called
+      1. sets all of the XHR properties and methods
+      1. sends the XHR request
+  1. jQuery has a number of other methods that can be used to make asynchronous calls. Each one of these functions in turn calls jQuery's main .ajax() method:
+      1. .get()
+      1. .getJSON()
+      1. .getScript()
+      1. .post()
+      1. .load()    
