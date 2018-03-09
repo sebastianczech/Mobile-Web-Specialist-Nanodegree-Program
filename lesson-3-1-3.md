@@ -218,7 +218,7 @@ function addImage(data) {
 }
 ```
 
-#### Handling an handleError
+#### Handling an error
 
 ```JavaScript
 fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
