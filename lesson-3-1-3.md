@@ -33,6 +33,13 @@
    * [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
    * [New Tricks in XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/)
    * [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/)
+   * [window.fetch polyfill](https://github.com/github/fetch)
+   * [Can I use Fetch](https://caniuse.com/#feat=fetch)
+   * [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+   * [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+   * [WindowOrWorkerGlobalScope.fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
+   * [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+   * [fetch API](https://davidwalsh.name/fetch)
 
 
 ### Using AJAX with XHR
@@ -109,7 +116,7 @@ $.ajax({
 
 #### Request with Authorization Header
 
-```
+```JavaScript
 $.ajax({
     url: 'https://api.unsplash.com/search/photos',
     headers: { Authorization: 'Client-ID 123acd456efg' }
@@ -132,3 +139,102 @@ $.ajax({
       1. .getScript()
       1. .post()
       1. .load()    
+
+### Using AJAX with Fetch
+
+* Fetch is promise-based.
+
+* Fetch requests still need to obey the cross-origin protocol of how resources are shared. This means that, by default, you can only make requests for assets and data on the same domain as the site that will end up loading the data.
+
+* The Fetch request takes the URL to the requested resource as the first argument, but the second argument is a configuration object. One of the options to this config object is a headers property.
+
+* GET HTTP method is used for a Fetch request.
+
+* Response object is new with the Fetch API and is what's returned when a Fetch request resolves.
+
+#### Fetch requesting
+
+```JavaScript
+fetch('<URL-to-the-resource-that-is-being-requested>');
+
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    method: 'POST'
+});
+```
+
+#### Fetch handling response
+
+```JavaScript
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    }
+}).then(function(response) {
+    debugger; // work with the returned response
+});
+
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    }
+}).then(function(response) {
+    return response.json();
+});
+
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    }
+}).then(function(response) {
+    return response.json();
+}).then(addImage);
+
+function addImage(data) {
+    debugger;
+}
+```
+
+#### Arrow function with Fetch_API
+
+```JavaScript
+// without the arrow function
+}).then(function(response) {
+    return response.json();
+})
+
+// using the arrow function
+}).then(response => response.json())
+
+// Fetch request with arrow function
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    }
+}).then(response => response.json())
+.then(addImage);
+
+function addImage(data) {
+    debugger;
+}
+```
+
+#### Handling an handleError
+
+```JavaScript
+fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    }
+}).then(response => response.json())
+.then(addImage)
+.catch(e => requestError(e, 'image'));
+
+function addImage(data) {
+    debugger;
+}
+
+function requestError(e, part) {
+    console.log(e);
+    responseContainer.insertAdjacentHTML('beforeend', `<p class="network-warning">Oh no! There was an error making a request for the ${part}.</p>`);
+}
+```
