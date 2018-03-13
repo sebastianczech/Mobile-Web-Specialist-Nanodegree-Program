@@ -7,7 +7,9 @@
 
 # Lesson 3.10 - Productive Editing
 
-TODO
+* IDE - Integrated Development Environment
+* In IDE use build-in shortcuts and features.
+* Extend your IDE by installing plugins and packges to editor.
 
 # Lesson 3.11 - Powerful Builds
 
