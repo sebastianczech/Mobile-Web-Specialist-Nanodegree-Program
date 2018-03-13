@@ -1,6 +1,9 @@
 # Lesson 3.9 - Introducing Web Tooling and Automation
 
-TODO
+* Use libraries instead of building something from scratch.
+* Use web tools, which have great community.
+* There is no one library, which has everything you need.
+* Be careful with micro optimizations e.g .speeding launching IDE by 10%, which is started once a day.
 
 # Lesson 3.10 - Productive Editing
 
