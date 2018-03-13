@@ -36,3 +36,8 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 * [Lesson 2.16 - The benefits of offline first](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-1-offline-first/README.md)
 * [Lesson 2.17 - Introducing the Service Worker](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-2-service-worker/README.md)
 * [Lesson 3.1 - 3.3 - AJAX with XHR, jQuery and Fetch](lesson-3-1-3.md)
+* [Lesson 3.4 - Syntax](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/tree/master/lesson-4-syntax)
+* [Lesson 3.5 - Functions](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-5-functions)
+* [Lesson 3.6 - Built-ins](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-6-built-ins)
+* [Lesson 3.7 - Professional-developer-fu](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-7-professional-dev-fu)
+* [Lesson 3.8 - IndexedDB and Caching](https://github.com/sebastianczech/Google-Challenge-Scholarship-Mobile-Web/blob/master/lesson-3-indexeddb-caching)
