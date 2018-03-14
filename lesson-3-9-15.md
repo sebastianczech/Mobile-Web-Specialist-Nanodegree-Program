@@ -157,7 +157,144 @@ gulp.task('default', function () {
 
 # Lesson 3.14 - Awesome Optimizations
 
-TODO
+* Make ```index.html``` automatically reload:
+
+```JavaScript
+gulp.watch("./build/index.html").on('change', browserSync.reload);
+```
+
+* SASS is doing concatenation and minification for CSS:
+
+```JavaScript
+gulp.task('sass', function () {
+ return gulp.src('./sass/**/*.scss')
+   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+   .pipe(gulp.dest('./css'));
+});
+```
+
+* [JavaScript concatenation](https://www.npmjs.com/package/gulp-concat):
+
+```JavaScript
+var concat = require('gulp-concat');
+ 
+gulp.task('scripts', function() {
+  return gulp.src('./lib/*.js')
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./dist/'));
+});
+```
+
+* [JavaScript minification](https://www.npmjs.com/package/gulp-uglify):
+
+```JavaScript
+var concat = require('gulp-concat');
+ 
+gulp.task('scripts', function() {
+  return gulp.src('./lib/*.js')
+    .pipe(concat('all.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/'));
+});
+```
+
+```JavaScript
+var gulp = require('gulp');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+ 
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('lib/*.js'),
+        uglify(),
+        gulp.dest('dist')
+    ],
+    cb
+  );
+});
+```
+
+* [https://css-tricks.com/the-difference-between-minification-and-gzipping/](https://css-tricks.com/the-difference-between-minification-and-gzipping/)
+
+* [Babel - a JavaScript compiler.](https://babeljs.io/)
+
+* [Gulp Babel](https://www.npmjs.com/package/gulp-babel):
+
+```JavaScript
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+ 
+gulp.task('default', () =>
+    gulp.src('src/app.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest('dist'))
+);
+```
+
+* [Source maps](https://www.npmjs.com/package/gulp-sourcemaps) are files that associate line numbers from the processed file to the original. This way the browser can lookup the current line number in the sourcemap and open the right source file at the correct line when debugging. In Chrome for instance, the DevTools support source maps both for CSS and JavaScript:
+
+```JavaScript
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+ 
+gulp.task('javascript', function() {
+  gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+});
+```
+
+* [Plugins with gulp sourcemaps support](https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support)
+
+* [Introduction to JavaScript Source Maps](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
+
+* Image optimization courses:
+   * [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
+   * [Web Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
+   * [Responsive Web Design](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893)
+   * [Responsive Images](https://www.udacity.com/course/responsive-images--ud882)
+   
+* Image compression with [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin):
+
+```JavaScript
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
+ 
+gulp.task('default', () =>
+    gulp.src('src/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+);
+```
+
+* [PNG Quantization](https://www.npmjs.com/package/imagemin-pngquant):
+
+```JavaScript
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
+ 
+imagemin(['images/*.png'], 'build/images', {use: [imageminPngquant()]}).then(() => {
+    console.log('Images optimized');
+});
+```
+
+```JavaScript
+gulp.task('default', function() {
+    return gulp.src('src/images/*')
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/images'));
+});
+```
 
 # Lesson 3.15 - Web Tooling and Automation Conclusion
 
