@@ -80,7 +80,18 @@ gulp.task('default', () =>
 
 # Lesson 3.12 - Expressive Live Editing
 
-TODO
+* [Chrome Dev Workspaces](https://developers.google.com/web/tools/setup/setup-workflow)
+* [Browser Sync](https://browsersync.io/)
+
+* Create a browser-sync object and initialize the server:
+
+```JavaScript
+var browserSync = require('browser-sync').create();
+ browserSync.init({
+     server: "./"
+ });
+ browserSync.stream();
+```
 
 # Lesson 3.13 - How to Prevent Disasters
 
