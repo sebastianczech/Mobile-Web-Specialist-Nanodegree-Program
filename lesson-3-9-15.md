@@ -95,7 +95,65 @@ var browserSync = require('browser-sync').create();
 
 # Lesson 3.13 - How to Prevent Disasters
 
-TODO
+* [Comparison of JavaScript Linting Tools](https://www.sitepoint.com/comparison-javascript-linting-tools/)
+* [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
+
+* Linting via:
+   * IDE (live linting)
+   * build process
+   * pre-commit hook in version control   
+   
+* Linting:
+   * code style
+   * syntax
+   
+* Popular linters:
+   * JSHint
+   * JSCS
+   * ESLint
+   
+* [gulp-eslint](https://www.npmjs.com/package/gulp-eslint):
+
+```JavaScript
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
+ 
+gulp.task('lint', () => {
+    // ESLint ignores files with "node_modules" paths.
+    // So, it's best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src(['**/*.js','!node_modules/**'])
+        // eslint() attaches the lint output to the "eslint" property
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(eslint.failAfterError());
+});
+ 
+gulp.task('default', ['lint'], function () {
+    // This will only run if the lint task is successful...
+});
+```
+   
+* [Udacity JavaScript Testing course](https://eu.udacity.com/course/javascript-testing--ud549)
+
+* [Jasmine - Behavior-Driven JavaScript](https://jasmine.github.io/)
+* [gulp-jasmine-phantom](https://www.npmjs.com/package/gulp-jasmine-phantom):
+
+```JavaScript
+var gulp = require('gulp');
+var jasmine = require('gulp-jasmine-phantom');
+ 
+gulp.task('default', function () {
+  return gulp.src('spec/test.js')
+          .pipe(jasmine());
+});
+```
 
 # Lesson 3.14 - Awesome Optimizations
 
