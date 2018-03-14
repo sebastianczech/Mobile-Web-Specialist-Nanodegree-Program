@@ -187,6 +187,8 @@ gulp.task('scripts', function() {
 
 * [JavaScript minification](https://www.npmjs.com/package/gulp-uglify):
 
+Example 1:
+
 ```JavaScript
 var concat = require('gulp-concat');
  
@@ -197,6 +199,8 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./dist/'));
 });
 ```
+
+Example 2:
 
 ```JavaScript
 var gulp = require('gulp');
@@ -276,6 +280,8 @@ gulp.task('default', () =>
 
 * [PNG Quantization](https://www.npmjs.com/package/imagemin-pngquant):
 
+Example 1:
+
 ```JavaScript
 const imagemin = require('imagemin');
 const imageminPngquant = require('imagemin-pngquant');
@@ -284,6 +290,8 @@ imagemin(['images/*.png'], 'build/images', {use: [imageminPngquant()]}).then(() 
     console.log('Images optimized');
 });
 ```
+
+Example 2:
 
 ```JavaScript
 gulp.task('default', function() {
