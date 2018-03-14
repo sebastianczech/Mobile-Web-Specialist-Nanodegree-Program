@@ -306,4 +306,10 @@ gulp.task('default', function() {
 
 # Lesson 3.15 - Web Tooling and Automation Conclusion
 
-TODO
+* [Scaffolding with Yeoman](http://yeoman.io/):
+
+```
+npm install -g yo
+npm install -g generator-webapp
+yo webapp
+```
