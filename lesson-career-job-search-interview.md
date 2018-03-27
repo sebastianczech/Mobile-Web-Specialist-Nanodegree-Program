@@ -54,3 +54,7 @@
     * Tell me about a time you successfully persuaded someone to understand your perspective at work.
     * Describe a time when you were the primary “expert”. How did you ensure that everyone understood you?
     * Describe a time when you could only use written communication to get your ideas across to your team.
+
+## Career Resource Center
+
+* [Interviews - Udacity](https://career-resource-center.udacity.com/interviews)
