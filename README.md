@@ -44,3 +44,4 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 * [Lesson 3.13 - How to Prevent Disasters](lesson-3-9-15.md)
 * [Lesson 3.14 - Awesome Optimizations](lesson-3-9-15.md)
 * [Lesson 3.15 - Web Tooling and Automation Conclusion](lesson-3-9-15.md)
+* [Extra lesson - Career: job search & interview advice](lesson-career-job-search-interview.md)
