@@ -53,6 +53,14 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
    * [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## HTTP/1
+
+* Useful links:
+   * [Netcat - TCP/IP swiss Army](http://nc110.sourceforge.net/)
+   * [Netcat (nc)](https://en.wikipedia.org/wiki/Netcat)
+   * [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+   * [HTTP header fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+   * [REST API tutorial](http://www.restapitutorial.com/)
+
 ## HTTPS
 ## HTTP/2
 ## Security
