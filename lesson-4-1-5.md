@@ -7,6 +7,7 @@
    * __HTML__ - HyperText Markup Language
    * __HTTP__ - Hypertext Transfer Protocol
 
+
 * Example of HTTP request:
 
 ```
@@ -21,6 +22,7 @@ Referer: https://github.com/sebastianczech
 Accept-Encoding: gzip, deflate, br
 Accept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6
 ```
+
 
 * Example of HTTP response:
 
@@ -46,6 +48,7 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
 ...
 ```
 
+
 * Useful links:
    * [Introduction to fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch?hl=en)
    * [That's so fetch!](https://jakearchibald.com/2015/thats-so-fetch/)
@@ -62,5 +65,15 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
    * [REST API tutorial](http://www.restapitutorial.com/)
 
 ## HTTPS
+
+* Common abbreviations:
+   * __TLS__ - Transport Layer Security
+
+
+* Useful links:
+   * [Firesheep](http://codebutler.com/firesheep)
+   * [Man in the middle attack (MITM)](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
+   * [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
+
 ## HTTP/2
 ## Security
