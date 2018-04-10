@@ -70,10 +70,15 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
    * __TLS__ - Transport Layer Security
 
 
+* TLS -> encryption + hashing   
+
+
 * Useful links:
    * [Firesheep](http://codebutler.com/firesheep)
    * [Man in the middle attack (MITM)](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
    * [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
+   * [Bad SSL](https://badssl.com/)
+   * [Mixed content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content)
 
 ## HTTP/2
 ## Security
