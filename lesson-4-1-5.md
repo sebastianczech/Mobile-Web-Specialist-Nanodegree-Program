@@ -97,3 +97,10 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
    * [Can I use HTTP/2 protocol](https://caniuse.com/#feat=http2)
 
 ## Security
+
+* Origin = Data Scheme + Hostname + Port e.g. https:// + www.google.com + :443
+
+* Cross-Origin Fetch Requests are not allowed
+
+* Useful links:
+   * [Same Origin Policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)
