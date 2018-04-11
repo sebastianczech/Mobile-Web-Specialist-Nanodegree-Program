@@ -81,4 +81,19 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
    * [Mixed content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content)
 
 ## HTTP/2
+
+* HTTP/1 problems:
+   * __HOL__ - head-of-line blocking (resolved in HTTP/2 by multiplexing and sharing connection)
+   * uncompressed headers
+   * security (resolved in HTTP/2 by TLS)
+
+* Round trip = request + response
+
+* Useful links:
+   * [Report: State of the Web ](https://httparchive.org/reports/state-of-the-web)
+   * [SPDY: An experimental protocol for a faster web](http://dev.chromium.org/spdy/spdy-whitepaper)
+   * [gzip in HTML5 Boilerplate project](https://github.com/h5bp/html5-boilerplate/blob/master/dist/.htaccess#L709-L795)
+   * [HPACK: Header Compression for HTTP/2](https://http2.github.io/http2-spec/compression.html)
+   * [Can I use HTTP/2 protocol](https://caniuse.com/#feat=http2)
+
 ## Security
