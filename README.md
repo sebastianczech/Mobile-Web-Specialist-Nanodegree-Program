@@ -14,6 +14,10 @@ Materials connected with Mobile Web Specialist Nanodegree Program
 ### Useful links
 
 * [Choose an open source license](https://choosealicense.com/)
+* [Udacity Git Commit Message Style Guide](http://udacity.github.io/git-styleguide/)
+* [Udacity Frontend Nanodegree HTML Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/index.html)
+* [Udacity Frontend Nanodegree CSS Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/css.html)
+* [Udacity Frontend Nanodegree JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html)
 
 ### Notes from lessons
 
