@@ -110,6 +110,9 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
 
 * __CSRF__ - Cross-site request forgery
 
+* __XSS__ - Cross-site scripting
+
 * Useful links:
    * [Same Origin Policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)
    * [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+   * [Cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting)
