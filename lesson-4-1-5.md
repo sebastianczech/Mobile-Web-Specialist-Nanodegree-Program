@@ -98,9 +98,18 @@ X-GitHub-Request-Id: E324:5AF5:6956FA:C58636:5AC69276
 
 ## Security
 
-* Origin = Data Scheme + Hostname + Port e.g. https:// + www.google.com + :443
+* Origin = Data Scheme + Hostname + Port e.g. ``https://`` + ``www.google.com`` + ``:443``
 
 * Cross-Origin Fetch Requests are not allowed
 
+* __CORS__ - Cross Origin Resource Sharing
+
+* _Message passing_ - technique designed to allow cross-origin communication. ```postMessage()``` is a function to pass a message to other windows and iframes, even if they come from a different origin.
+
+* __JSONP__ - JSON with padding
+
+* __CSRF__ - Cross-site request forgery
+
 * Useful links:
    * [Same Origin Policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)
+   * [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
