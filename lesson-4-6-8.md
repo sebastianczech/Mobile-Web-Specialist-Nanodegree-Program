@@ -126,4 +126,18 @@ if __name__ == '__main__':
 
 * Fragments aren't sent to the server as part of an HTTP GET request e.g. ```stardust``` in ```http://localhost:8000/spiders_from_mars#stardust```.
 
+* Simple echo server, which always writes the same message taken from the request path:
+
+```python
+self.wfile.write(self.path[1:].encode())
+```
+
+what is the same as:
+
+```python
+message = self.path[1:]  # Extract 'bears' from '/bears', for instance
+message_bytes = message.encode()  # Make bytes from the string
+self.wfile.write(message_bytes)  # Send it over the network
+```
+
 ## HTTP in the Real World
