@@ -118,4 +118,12 @@ if __name__ == '__main__':
 
 * [Exercise code for the Udacity course "HTTP and Web Servers" written in portable Python 3 and HTML.](https://github.com/udacity/course-ud303)
 
+* ```.encode()``` - if you want to send a string over the HTTP connection, you have to encode the string into a bytes object. The encode method on strings translates the string into a bytes object, which is suitable for sending over the network. 
+
+* [UTF-8](https://en.wikipedia.org/wiki/UTF-8) - the most common encoding, which is supported by all major and minor browsers and operating systems, and it supports characters for almost all the world's languages. In UTF-8, a single character may be represented as anywhere from one to four bytes, depending on language. UTF-8 is the default encoding in Python. 
+
+* In ```BaseHTTPRequestHandler``` parent class in http.server ```path``` is instance variable that contains the request path.
+
+* Fragments aren't sent to the server as part of an HTTP GET request e.g. ```stardust``` in ```http://localhost:8000/spiders_from_mars#stardust```.
+
 ## HTTP in the Real World
