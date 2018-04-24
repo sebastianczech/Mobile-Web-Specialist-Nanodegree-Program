@@ -84,4 +84,38 @@ Content-type: text/html; charset=utf-8
 ```
 
 ## The Web from Python
+
+* Run a web service in Python:
+   * Import ```http.server```.
+   * Create a subclass of ```http.server.BaseHTTPRequestHandler``` as a handler class.
+   * Define a method on the handler class for each HTTP verb you want to handle.
+      * The method for GET requests has to be called ```do_GET```.
+      * Inside the method, call built-in methods of the handler class to read the HTTP request and write the response.
+   * Create an instance of ```http.server.HTTPServer```, giving it your handler class and server information (e.g. the port number).
+   * Call the ```HTTPServer``` instance's ```run_forever``` method.
+   
+```python
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+
+class HelloHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        # First, send a 200 OK response.
+        self.send_response(200)
+
+        # Then send headers.
+        self.send_header('Content-type', 'text/plain; charset=utf-8')
+        self.end_headers()
+
+        # Now, write the response body.
+        self.wfile.write("Hello, HTTP!\n".encode())
+
+if __name__ == '__main__':
+    server_address = ('', 8000)  # Serve on all addresses, port 8000.
+    httpd = HTTPServer(server_address, HelloHandler)
+    httpd.serve_forever()
+```
+
+* [Exercise code for the Udacity course "HTTP and Web Servers" written in portable Python 3 and HTML.](https://github.com/udacity/course-ud303)
+
 ## HTTP in the Real World
