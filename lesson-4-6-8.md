@@ -140,4 +140,23 @@ message_bytes = message.encode()  # Make bytes from the string
 self.wfile.write(message_bytes)  # Send it over the network
 ```
 
+* __Query__ - part of the URI after the ? mark. Conventionally, query parameters are written as ```key=value``` and separated by ```&``` signs. 
+
+* [urllib.parse](https://docs.python.org/3/library/urllib.parse.html) - Python library that knows how to unpack query parameters and other parts of an HTTP URL. 
+
+```python
+>>> from urllib.parse import urlparse, parse_qs
+>>> address = 'https://www.google.com/search?q=gray+squirrel&tbm=isch'
+>>> parts = urlparse(address)
+>>> print(parts)
+ParseResult(scheme='https', netloc='www.google.com', path='/search', params='', query='q=gray+squirrel&tbm=isch', fragment='')
+>>> print(parts.query)
+q=gray+squirrel&tbm=isch
+>>> query = parse_qs(parts.query)
+>>> query
+{'q': ['gray squirrel'], 'tbm': ['isch']}
+```
+
+* HTTP URLs aren't allowed to contain spaces or certain other characters. So if you want to send these characters in an HTTP request, they have to be translated into a "URL-safe" or "URL-quoted" format. "Quoting" in this sense doesn't have to do with quotation marks. It means translating a string into a form that doesn't have any special characters in it, but in a way that can be reversed (unquoted) later. And if that isn't confusing enough, it's sometimes also referred to as URL-encoding or URL-escaping. One of the features of the URL-quoted format is that spaces are sometimes translated into plus signs. Other special characters are translated into hexadecimal codes that begin with the percent sign.
+
 ## HTTP in the Real World
