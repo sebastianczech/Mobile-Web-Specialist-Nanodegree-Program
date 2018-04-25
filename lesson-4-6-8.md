@@ -157,6 +157,14 @@ q=gray+squirrel&tbm=isch
 {'q': ['gray squirrel'], 'tbm': ['isch']}
 ```
 
-* HTTP URLs aren't allowed to contain spaces or certain other characters. So if you want to send these characters in an HTTP request, they have to be translated into a "URL-safe" or "URL-quoted" format. "Quoting" in this sense doesn't have to do with quotation marks. It means translating a string into a form that doesn't have any special characters in it, but in a way that can be reversed (unquoted) later. And if that isn't confusing enough, it's sometimes also referred to as URL-encoding or URL-escaping. One of the features of the URL-quoted format is that spaces are sometimes translated into plus signs. Other special characters are translated into hexadecimal codes that begin with the percent sign.
+* HTTP URLs aren't allowed to contain spaces or certain other characters. So if you want to send these characters in an HTTP request, they have to be translated into a __URL-safe__ or __URL-quoted__ format. __Quoting__ in this sense doesn't have to do with quotation marks. It means translating a string into a form that doesn't have any special characters in it, but in a way that can be reversed (unquoted) later. And if that isn't confusing enough, it's sometimes also referred to as URL-encoding or URL-escaping. One of the features of the URL-quoted format is that spaces are sometimes translated into plus signs. Other special characters are translated into hexadecimal codes that begin with the percent sign.
+
+* ```HTTP GET``` methods are good for search forms and other actions that are intended to look something up or ask the server for a copy of some resource. But ```GET``` is not recommended for actions that are intended to alter or create a resource. For this sort of action, HTTP has a different verb, ```POST```.
+
+* __idempotent__ - an action is idempotent if doing it twice (or more) produces the same result as doing it once. ```POST``` requests are not idempotent.
+
+* When a browser submits a form as a ```POST``` request, it doesn't encode the form data in the URI path, the way it does with a ```GET``` request. Instead, it sends the form data in the request body, underneath the headers. The request also includes ```Content-Type``` and ```Content-Length``` headers, which we've previously only seen on HTTP responses.
+
+* The names of HTTP headers are case-insensitive. So there's no difference between writing ```Content-Length``` or ```content-length``` or even ```ConTent-LeNgTh```.
 
 ## HTTP in the Real World
