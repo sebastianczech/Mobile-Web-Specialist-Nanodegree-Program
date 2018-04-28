@@ -244,3 +244,110 @@ r.json()['name']
 * If the ```requests.get``` call can reach an HTTP server at all, it will give you a ```Response``` object. If the request failed, the ```Response``` object has a ```status_code``` data member — either 200, or 404, or some other code. But if it wasn't able to get to an HTTP server, for instance because the site doesn't exist, then ```requests.get``` will raise an exception.
 
 ## HTTP in the Real World
+
+* Steps to deployment using __Heroku__:
+   1. Check your server code into a new local Git repository.
+   2. Sign up for a free Heroku account.
+   3. [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+   4. Authenticate the Heroku CLI with your account: ```heroku login```
+   5. Create configuration files ```Procfile```, ```requirements.txt```, and ```runtime.txt``` and check them into your Git repository.
+   6. Modify your server to listen on a configurable port.
+   7. Create your Heroku app: ```heroku create your-app-name```
+   8. Push your code to Heroku with Git: ```git push heroku master```
+
+
+* ```runtime.txt``` tells Heroku what version of Python you want to run. Check the currently supported runtimes in the Heroku documentation; this will change over time! As of early 2017, the currently supported version of Python 3 is python-3.6.0; so this file just needs to contain the text python-3.6.0.
+
+* ```requirements.txt``` is used by Heroku (through pip) to install dependencies of your application that aren't in the Python standard library. The bookmark server has one of these: the requests module. We'd like a recent version of that, so this file can contain the text requests>=2.12. This will install version 2.12 or a later version, if one has been released.
+
+* ```Procfile``` is used by Heroku to specify the command line for running your application. It can support running multiple servers, but in this case we're only going to run a web server. Check the Heroku documentation about process types for more details. If your bookmark server is in BookmarkServer.py, then the contents of Procfile should be web: python BookmarkServer.py.   
+
+* Python code can access environment variables in the ```os.environ``` dictionary. To access ```os.environ```, you will also need to ```import os``` at the top of the file:
+
+```python
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000))   # Use PORT if it's there.
+    server_address = ('', port)
+    httpd = http.server.HTTPServer(server_address, Shortener)
+    httpd.serve_forever()
+```
+
+* Built-in ```http.server.HTTPServer``` class can only handle a single request at once.
+
+* HTTPServer that supports thread-based concurrency:
+
+```python
+import threading
+from socketserver import ThreadingMixIn
+
+class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
+    "This is an HTTPServer that supports thread-based concurrency."
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000))
+    server_address = ('', port)
+    httpd = ThreadHTTPServer(server_address, Shortener)
+    httpd.serve_forever()    
+```
+
+* Specialized web server programs — like _Apache_, _Nginx_, or _IIS_ — can serve static content from disk storage very quickly and efficiently. They can also provide access control, allowing only authenticated users to download particular static content.
+
+* __Cookies__ are a way that a server can ask a browser to retain a piece of information, and send it back to the server when the browser makes subsequent requests. Every cookie has a __name__ and a __value__:
+
+```python
+from http.cookies import SimpleCookie, CookieError
+
+out_cookie = SimpleCookie()
+out_cookie["bearname"] = "Smokey Bear"
+out_cookie["bearname"]["max-age"] = 600
+out_cookie["bearname"]["httponly"] = True
+```
+
+* Send the cookie as a header from your request handler:
+
+```python
+self.send_header("Set-Cookie", out_cookie["bearname"].OutputString())
+```
+
+* To read incoming cookies, create a SimpleCookie from the Cookie header:
+
+```python
+in_cookie = SimpleCookie(self.headers["Cookie"])
+in_data = in_cookie["bearname"].value
+```
+
+* __TLS__ - Transport Layer Security provides some important guarantees for web security:
+
+    * It keeps the connection __private__ by encrypting everything sent over it. Only the server and browser should be able to read what's being sent.
+    * It lets the browser __authenticate__ the server. For instance, when a user accesses https://www.udacity.com/, they can be sure that the response they're seeing is really from Udacity's servers and not from an impostor.
+    * It helps protect the __integrity__ of the data sent over that connection — checking that it has not been (accidentally or deliberately) modified or replaced.
+
+* TLS is also very often referred to by the older name __SSL__ (Secure Sockets Layer). Technically, SSL is an older version of the encryption protocol. This course will talk about TLS because that's the current standard.
+
+* TLS includes two important pieces of data: a __private key__ and a __public certificate__.
+
+* The server's certificate is issued by an organization called a __certificate authority (CA)__.
+
+* [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
+
+* Every request and response sent over a TLS connection is sent with a __message authentication code (MAC)__ that the other end of the connection can verify to make sure that the message hasn't been altered or damaged in transit.
+
+* All of the other HTTP methods:
+
+   * PUT for creating resources
+   * DELETE for deleting things
+   * PATCH for making changes
+   * HEAD, OPTIONS, TRACE for debugging
+
+* HTTP/2 - features:
+
+   * HTTP/2 should load much faster than HTTP/1, if your browser is using it!
+   * HTTP2 is multiplexing requests and responses over a single connection. The browser can send several requests all at once, and the server can send responses as quickly as it can get to them. There's no limit on how many can be in flight at once.
+   * HTTP/2 has a feature called server push which allows the server to say, effectively, "If you're asking for index.html, I know you're going to ask for style.css too, so I'm going to send it along as well."
+   * Early drafts of HTTP/2 proposed that encryption should be required for sites to use the new protocol. This ended up being removed from the official standard … but most of the browsers did it anyway! Chrome, Firefox, and other browsers will only attempt HTTP/2 with a site that is using TLS encryption.
+
+* [HTTP Spy](https://chrome.google.com/webstore/detail/http-spy/agnoocojkneiphkobpcfoaenhpjnmifb?hl=en) is a neat little Chrome extension that will show you the headers and request information for every request your browser makes.
+
+* [HTTP/2 standard](https://http2.github.io/)
+
+* [Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open Certificate Authority.
