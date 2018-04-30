@@ -12,6 +12,12 @@
 
 * [Performance Analysis Reference ](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
 
+* __JavaScript__ or CSS anims or Web animation API) > __Style__ > __Layout__ > __Paint__ > __Composite__
+
+* [Introducing 'layout boundaries'](http://wilsonpage.co.uk/introducing-layout-boundaries/)
+
+* [CSS triggers](https://csstriggers.com/)
+
 ## App Lifecycles
 ## Weapons of Jank Destruction
 ## JavaScript
