@@ -39,6 +39,11 @@
 ![Time table](http://udacity.github.io/60fps/images/time-table.jpg)
 
 ## Weapons of Jank Destruction
+
+* Chrome DevTools and Timeline
+
+* Test all devices (e.g. using emulators and simulators)
+
 ## JavaScript
 ## Styles and Layout
 ## Compositing and Painting
