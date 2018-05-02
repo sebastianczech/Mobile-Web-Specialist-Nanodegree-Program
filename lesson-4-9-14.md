@@ -34,6 +34,10 @@
 
 * Anything that moves should run at 60 FPS.
 
+* Time table:
+
+![Time table](http://udacity.github.io/60fps/images/time-table.jpg)
+
 ## Weapons of Jank Destruction
 ## JavaScript
 ## Styles and Layout
