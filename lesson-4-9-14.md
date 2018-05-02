@@ -28,7 +28,7 @@
    
 * After load app is idle.
 
-*  Animations: [irst Last Invert Play](https://github.com/udacity/devsummit/blob/master/src/static/scripts/components/card.js)
+*  Animations: [FLIP - First Last Invert Play](https://github.com/udacity/devsummit/blob/master/src/static/scripts/components/card.js)
 
 * ```opacity``` and ```transform``` only trigger composite, there are no changes in HTML->DOM, CSS->CSSOM, DOM+CSSOM->Render tree, Layout or Paint.
 
@@ -45,5 +45,34 @@
 * Test all devices (e.g. using emulators and simulators)
 
 ## JavaScript
+
+* JavaScript Compilers - _Just In Time (JIT)_
+
+* We shouldn't concern about micro-optimizations (using ```for``` or ```while``` loop)
+
+* As JS can trigger every part of the rendering pipeline, it makes sense to run it as early as possible each frame.
+
+* [requestAnimationFrame polyfill](https://gist.github.com/paulirish/1579671)
+
+* 1000ms / 60 = 16 ms -> 10 ms is the target time for animation
+
+* ```setTimeout```, ```setInterval``` are not good for animations. ```requestAnimationFrame``` should be used.
+
+* JavaScript profiler in Chrome DevTools
+
+* [Web Workers Demo](https://github.com/udacity/web-workers-demo) and [Web Workers Demo Solution](https://github.com/udacity/web-workers-demo/tree/solution)
+
+* [Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+
+* [The Basics of Web Workers](https://www.html5rocks.com/en/tutorials/workers/basics/)
+
+* [Writing Fast, Memory-Efficient JavaScript on Smashing Magazine](https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/)
+
+* [Memory Management on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+
+* [High-Performance, Garbage-Collector-Friendly Code on Build New Games](http://buildnewgames.com/garbage-collector-friendly-code/)
+
+* [QR Code App](https://github.com/udacity/qrcode)
+
 ## Styles and Layout
 ## Compositing and Painting
