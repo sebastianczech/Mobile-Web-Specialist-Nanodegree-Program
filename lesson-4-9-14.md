@@ -89,3 +89,19 @@
 * Batch your style changes and avoid running layout as much as possible.
 
 ## Compositing and Painting
+
+* Tell browser to expect changes:
+
+```html
+.circle {
+   will-change: transform;
+}
+```
+
+for older browsers:
+
+```html
+.circle {
+   transform: translateZ(0);
+}
+```
