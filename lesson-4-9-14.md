@@ -75,4 +75,17 @@
 * [QR Code App](https://github.com/udacity/qrcode)
 
 ## Styles and Layout
+
+* __BEM__ - block element modifier
+
+* [BEM - key concepts](https://en.bem.info/methodology/key-concepts/)
+
+* [BEM and SMACSS: Advice From Developers Who’ve Been There](https://www.sitepoint.com/bem-smacss-advice-from-developers/)
+
+* [How (not) to trigger a layout in WebKit ](http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html)
+
+* __FSL__ - forced synchronous layout
+
+* Batch your style changes and avoid running layout as much as possible.
+
 ## Compositing and Painting
